@@ -3,6 +3,8 @@ class Person(object):
     sex = 'male'
 
 class Student(object):
+    nation = 'China'
+
     def __init__(self, name, sex, age):
         self.name = name
         self._sex = sex
@@ -10,6 +12,14 @@ class Student(object):
 
     def get_age(self):
         return self.__age
+
+    @classmethod
+    def get_nation(self):
+        return self.nation
+
+    @property
+    def get_name(self):
+        return self.name
 
 stu1 = Student('Jack', 'male', 20)
 
@@ -28,3 +38,8 @@ print(stu1._sex)
 
 print(stu1.get_age())
 print(stu1._Student__age)
+
+print('----------------------------')
+
+print(Student.get_nation())
+print(stu1.get_name)
